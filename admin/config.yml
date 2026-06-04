@@ -18,6 +18,10 @@ collections:
   # ---- Editable pages ----
   - name: pages
     label: "Pages"
+    # The default Decap preview can't run Jekyll/Liquid, so it just dumps fields
+    # unstyled. Disable it and use the live site (gojekyll on :4000) to preview.
+    editor:
+      preview: false
     files:
       - name: home
         label: "Home page"
@@ -137,5 +141,5 @@ collections:
           - { label: "Base URL", name: "baseurl", widget: "string", required: false }
           - { label: "Default share image", name: "image", widget: "image" }
           - { label: "Copyright line", name: "copyright", widget: "string" }
-          - { label: "Plugins (build)", name: "plugins", widget: "list", field: { label: "Plugin", name: "plugin", widget: "string" } }
-          - { label: "Exclude from build", name: "exclude", widget: "list", field: { label: "Path", name: "path", widget: "string" } }
+          - { label: "Plugins (build)", name: "plugins", widget: "hidden" }
+          - { label: "Exclude from build", name: "exclude", widget: "hidden" }
