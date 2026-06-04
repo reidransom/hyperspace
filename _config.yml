@@ -1,0 +1,32 @@
+# Site-wide settings
+# ------------------
+title: Hyperspace
+tagline: Just another fine responsive site template
+description: >
+  Hyperspace by HTML5 UP — a fun, blocky, one-page responsive site template,
+  converted to Jekyll. Edit this description in _config.yml.
+author:
+  name: Untitled
+  email: user@untitled.tld
+lang: en_US
+
+# Public base URL of the site. Required for absolute URLs in seo.html and
+# the sitemap. Change to your real domain before deploying.
+url: "https://example.com"
+baseurl: ""
+
+# Default OpenGraph share image (ideally a 1200x630 asset).
+image: /images/pic01.jpg
+
+# Footer copyright line.
+copyright: "Untitled. All rights reserved."
+
+# Build settings
+# --------------
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.txt
+  - LICENSE.txt
+  - .gitignore

@@ -1,0 +1,11 @@
+<section id="sidebar">
+	<div class="inner">
+		<nav>
+			<ul>
+				{%- for item in site.data.navigation_sidebar %}
+				<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+				{%- endfor %}
+			</ul>
+		</nav>
+	</div>
+</section>

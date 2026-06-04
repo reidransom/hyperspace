@@ -1,0 +1,22 @@
+address:
+  - 12345 Somewhere Road #654
+  - Nashville, TN 00000-0000
+  - USA
+email: user@untitled.tld
+phone: (000) 000-0000
+social:
+  - network: Twitter
+    icon: fa-twitter
+    url: "#"
+  - network: Facebook
+    icon: fa-facebook-f
+    url: "#"
+  - network: GitHub
+    icon: fa-github
+    url: "#"
+  - network: Instagram
+    icon: fa-instagram
+    url: "#"
+  - network: LinkedIn
+    icon: fa-linkedin-in
+    url: "#"
