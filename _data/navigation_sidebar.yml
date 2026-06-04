@@ -1,8 +1,9 @@
-- title: Welcome
-  url: "#intro"
-- title: Who we are
-  url: "#one"
-- title: What we do
-  url: "#two"
-- title: Get in touch
-  url: "#three"
+items:
+  - title: Welcome
+    url: "#intro"
+  - title: Who we are
+    url: "#one"
+  - title: What we do
+    url: "#two"
+  - title: Get in touch
+    url: "#three"

@@ -10,6 +10,12 @@ layout: default
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
+{%- if page.heading %}
+							<h1 class="major">{{ page.heading }}</h1>
+{%- endif %}
+{%- if page.hero_image %}
+							<span class="image fit"><img src="{{ page.hero_image | relative_url }}" alt="" /></span>
+{%- endif %}
 {{ content }}
 						</div>
 					</section>

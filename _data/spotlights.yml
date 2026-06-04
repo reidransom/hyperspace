@@ -1,15 +1,16 @@
-- image: /images/pic01.jpg
-  position: center center
-  title: Sed ipsum dolor
-  body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
-  link: /generic.html
-- image: /images/pic02.jpg
-  position: top center
-  title: Feugiat consequat
-  body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
-  link: /generic.html
-- image: /images/pic03.jpg
-  position: 25% 25%
-  title: Ultricies aliquam
-  body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
-  link: /generic.html
+items:
+  - image: /images/pic01.jpg
+    position: center center
+    title: Sed ipsum dolor
+    body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
+    link: /generic.html
+  - image: /images/pic02.jpg
+    position: top center
+    title: Feugiat consequat
+    body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
+    link: /generic.html
+  - image: /images/pic03.jpg
+    position: 25% 25%
+    title: Ultricies aliquam
+    body: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.
+    link: /generic.html

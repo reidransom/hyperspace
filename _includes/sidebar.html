@@ -2,7 +2,7 @@
 	<div class="inner">
 		<nav>
 			<ul>
-				{%- for item in site.data.navigation_sidebar %}
+				{%- for item in site.data.navigation_sidebar.items %}
 				<li><a href="{{ item.url }}">{{ item.title }}</a></li>
 				{%- endfor %}
 			</ul>

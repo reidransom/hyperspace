@@ -1,0 +1,141 @@
+# Decap CMS configuration
+# ------------------------
+# Backend is a placeholder: while you edit on localhost, `local_backend: true`
+# routes all reads/writes through the local `decap-server` proxy (port 8081) and
+# this backend is never contacted. Swap it for a real backend (git-gateway,
+# github, gitea, ...) when you set up authenticated production editing.
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+# Uploaded media is written to images/ and referenced from the site as /images/...
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  # ---- Editable pages ----
+  - name: pages
+    label: "Pages"
+    files:
+      - name: home
+        label: "Home page"
+        file: "index.html"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "text" }
+          - { label: "Intro — heading", name: "intro_heading", widget: "string" }
+          - { label: "Intro — text", name: "intro_text", widget: "text", hint: "Inline HTML (links, <br />) is allowed here." }
+          - { label: "Intro — button label", name: "intro_button_label", widget: "string" }
+          - { label: "Intro — button URL", name: "intro_button_url", widget: "string" }
+          - { label: "What we do — heading", name: "services_heading", widget: "string" }
+          - { label: "What we do — text", name: "services_text", widget: "text" }
+          - { label: "What we do — button label", name: "services_button_label", widget: "string" }
+          - { label: "What we do — button URL", name: "services_button_url", widget: "string" }
+          - { label: "Get in touch — heading", name: "contact_heading", widget: "string" }
+          - { label: "Get in touch — text", name: "contact_text", widget: "text" }
+      - name: generic
+        label: "Generic page"
+        file: "generic.md"
+        fields:
+          - { label: "Title (used in <head> / nav)", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "text" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Hero image", name: "hero_image", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # ---- Site data (_data/*.yml) ----
+  - name: site_data
+    label: "Site data"
+    files:
+      - name: spotlights
+        label: "Spotlights (home)"
+        file: "_data/spotlights.yml"
+        fields:
+          - label: "Spotlights"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Focus position", name: "position", widget: "string", hint: "e.g. center center, top center, 25% 25%" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Link", name: "link", widget: "string" }
+      - name: features
+        label: "Features (home)"
+        file: "_data/features.yml"
+        fields:
+          - label: "Features"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon classes", name: "icon", widget: "string", hint: "Font Awesome classes, e.g. solid major fa-code" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+      - name: contact
+        label: "Contact details"
+        file: "_data/contact.yml"
+        fields:
+          - label: "Address lines"
+            name: "address"
+            widget: "list"
+            field: { label: "Line", name: "line", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - label: "Social links"
+            name: "social"
+            widget: "list"
+            fields:
+              - { label: "Network", name: "network", widget: "string" }
+              - { label: "Icon class", name: "icon", widget: "string", hint: "e.g. fa-twitter" }
+              - { label: "URL", name: "url", widget: "string" }
+      - name: navigation_main
+        label: "Main navigation"
+        file: "_data/navigation_main.yml"
+        fields:
+          - label: "Menu items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+      - name: navigation_sidebar
+        label: "Sidebar navigation (home)"
+        file: "_data/navigation_sidebar.yml"
+        fields:
+          - label: "Menu items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  # ---- Global site settings (_config.yml) ----
+  # NOTE: Decap rewrites the whole file from the fields below and does NOT
+  # preserve YAML comments. Every key currently in _config.yml is represented
+  # here so nothing is dropped on save. `plugins` and `exclude` affect the
+  # build — leave them alone unless you know what you're changing.
+  - name: settings
+    label: "Site settings"
+    files:
+      - name: config
+        label: "Global settings"
+        file: "_config.yml"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Author"
+            name: "author"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+          - { label: "Language", name: "lang", widget: "string" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Base URL", name: "baseurl", widget: "string", required: false }
+          - { label: "Default share image", name: "image", widget: "image" }
+          - { label: "Copyright line", name: "copyright", widget: "string" }
+          - { label: "Plugins (build)", name: "plugins", widget: "list", field: { label: "Plugin", name: "plugin", widget: "string" } }
+          - { label: "Exclude from build", name: "exclude", widget: "list", field: { label: "Path", name: "path", widget: "string" } }

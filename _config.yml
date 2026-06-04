@@ -29,4 +29,5 @@ plugins:
 exclude:
   - README.txt
   - LICENSE.txt
+  - DEVELOPMENT.md
   - .gitignore
