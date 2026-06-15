@@ -16,7 +16,7 @@ url: "https://example.com"
 baseurl: ""
 
 # Default OpenGraph share image (ideally a 1200x630 asset).
-image: /images/pic01.jpg
+image: /assets/images/pic01.jpg
 
 # Footer copyright line.
 copyright: "Untitled. All rights reserved."

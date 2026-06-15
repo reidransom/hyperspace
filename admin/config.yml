@@ -10,9 +10,9 @@ backend:
 
 local_backend: true
 
-# Uploaded media is written to images/ and referenced from the site as /images/...
-media_folder: "images"
-public_folder: "/images"
+# Uploaded media is written to assets/images/ and referenced from the site as /assets/images/...
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
   # ---- Editable pages ----
