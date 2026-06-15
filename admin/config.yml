@@ -29,16 +29,28 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "SEO description", name: "description", widget: "text" }
-          - { label: "Intro — heading", name: "intro_heading", widget: "string" }
-          - { label: "Intro — text", name: "intro_text", widget: "richtext", hint: "Inline HTML (links, <br />) is allowed here." }
-          - { label: "Intro — button label", name: "intro_button_label", widget: "string" }
-          - { label: "Intro — button URL", name: "intro_button_url", widget: "string" }
-          - { label: "What we do — heading", name: "services_heading", widget: "string" }
-          - { label: "What we do — text", name: "services_text", widget: "text" }
-          - { label: "What we do — button label", name: "services_button_label", widget: "string" }
-          - { label: "What we do — button URL", name: "services_button_url", widget: "string" }
-          - { label: "Get in touch — heading", name: "contact_heading", widget: "string" }
-          - { label: "Get in touch — text", name: "contact_text", widget: "text" }
+          - label: "Intro"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "richtext", hint: "Inline HTML (links, <br />) is allowed here." }
+              - { label: "Button label", name: "button_label", widget: "string" }
+              - { label: "Button URL", name: "button_url", widget: "string" }
+          - label: "What we do"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Button label", name: "button_label", widget: "string" }
+              - { label: "Button URL", name: "button_url", widget: "string" }
+          - label: "Get in touch"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
       - name: generic
         label: "Generic page"
         file: "generic.md"

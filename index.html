@@ -4,30 +4,33 @@ title: Hyperspace
 description: A fun, blocky, one-page responsive site template by HTML5 UP, converted to Jekyll.
 
 # Intro section
-intro_heading: Hyperspace
-intro_text: >-
-  Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-  and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.
-intro_button_label: Learn more
-intro_button_url: "#one"
+intro:
+  heading: Hyperspace
+  text: >-
+    Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
+    and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.
+  button_label: Learn more
+  button_url: "#one"
 
 # "What we do" section
-services_heading: What we do
-services_text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
-services_button_label: Learn more
-services_button_url: generic.html
+services:
+  heading: What we do
+  text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
+  button_label: Learn more
+  button_url: generic.html
 
 # "Get in touch" section
-contact_heading: Get in touch
-contact_text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
+contact:
+  heading: Get in touch
+  text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
 ---
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>{{ page.intro_heading }}</h1>
-							<p>{{ page.intro_text }}</p>
+							<h1>{{ page.intro.heading }}</h1>
+							<p>{{ page.intro.text }}</p>
 							<ul class="actions">
-								<li><a href="{{ page.intro_button_url }}" class="button scrolly">{{ page.intro_button_label }}</a></li>
+								<li><a href="{{ page.intro.button_url }}" class="button scrolly">{{ page.intro.button_label }}</a></li>
 							</ul>
 						</div>
 					</section>
@@ -53,8 +56,8 @@ contact_text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam tur
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>{{ page.services_heading }}</h2>
-							<p>{{ page.services_text }}</p>
+							<h2>{{ page.services.heading }}</h2>
+							<p>{{ page.services.text }}</p>
 							<div class="features">
 								{%- for feature in site.data.features.items %}
 								<section>
@@ -65,7 +68,7 @@ contact_text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam tur
 								{%- endfor %}
 							</div>
 							<ul class="actions">
-								<li><a href="{{ page.services_button_url }}" class="button">{{ page.services_button_label }}</a></li>
+								<li><a href="{{ page.services.button_url }}" class="button">{{ page.services.button_label }}</a></li>
 							</ul>
 						</div>
 					</section>
@@ -73,8 +76,8 @@ contact_text: Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam tur
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>{{ page.contact_heading }}</h2>
-							<p>{{ page.contact_text }}</p>
+							<h2>{{ page.contact.heading }}</h2>
+							<p>{{ page.contact.text }}</p>
 							<div class="split style1">
 								<section>
 									<form method="post" action="#">
