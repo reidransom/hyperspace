@@ -1,12 +1,31 @@
 # Development & content editing
 
 This site is a Jekyll port of the HTML5 UP "Hyperspace" template, built with
-[gojekyll](https://github.com/osteele/gojekyll). Content is edited through
-[Decap CMS](https://decapcms.org/) running in **local backend** mode.
+[jigyll](https://github.com/reidransom/jigyll). Editing the site's content
+through a UI is **optional**: it's served by a separate [Decap CMS](https://decapcms.org/)
+layer that you only need to run when you want it.
 
-## Editing content locally
+## Development
 
-Decap's local backend lets you edit content on your machine with no hosting,
+To work on the site — templates, styles, and the build — you only need
+`jigyll` on your PATH. From the repo root:
+
+```sh
+# Serve with live rebuild (prints the host/port, e.g. http://localhost:4000/)
+jigyll serve
+
+# Or produce a static build in _site/
+jigyll build
+```
+
+That's everything required to run, preview, and build the site. The CMS below
+is not needed for development.
+
+## Content editing (optional)
+
+If you'd rather edit content in a UI than hand-edit the source files, the site
+ships with [Decap CMS](https://decapcms.org/) in **local backend** mode. Decap's
+local backend lets you edit content on your machine with no hosting,
 authentication, or git remote. It runs a small proxy (`decap-server`) that the
 admin UI talks to when the site is served on `localhost`; edits are written
 straight to the working-tree files (you commit them yourself with git).
@@ -18,15 +37,15 @@ Run these in **two terminals** from the repo root:
 npx decap-server
 
 # 2) The site
-gojekyll serve
+jigyll serve
 ```
 
 Then open the admin UI at the `/admin/` path of the served site, e.g.
-<http://localhost:4000/admin/> (use whatever host/port `gojekyll serve` prints).
+<http://localhost:4000/admin/> (use whatever host/port `jigyll serve` prints).
 
-Requirements: Node.js (for `npx decap-server`) and `gojekyll` on your PATH.
+This adds one requirement beyond development: Node.js (for `npx decap-server`).
 
-## What's editable
+### What's editable
 
 The CMS (`admin/config.yml`) exposes:
 
@@ -40,7 +59,7 @@ The CMS (`admin/config.yml`) exposes:
 
 `elements.html` is a static style reference and is intentionally not in the CMS.
 
-### Notes / gotchas
+#### Notes / gotchas
 
 - **`_data` files use an `items:` wrapper.** Decap file collections need a
   mapping at the root of a file, so the list files (`spotlights`, `features`,
@@ -63,7 +82,7 @@ backend is wired up. Do this at publish time, not via `_config.yml`'s `exclude:`
 (that would also hide it from local dev). For example, after a build:
 
 ```sh
-gojekyll build
+jigyll build
 rm -rf _site/admin        # or: rsync -a --exclude='admin' _site/ <target>
 ```
 

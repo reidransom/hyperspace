@@ -4,18 +4,33 @@
 
 Free for personal and commercial use under the CCA 3.0 license ([html5up.net/license](https://html5up.net/license))
 
-## Development & content editing (Decap CMS)
+> ## 🚀 Skip the setup
+>
+> Get a **commercial-ready, fully customizable, hosted** version
+> of this template — built and managed for you at **[r2ware.dev](https://r2ware.dev)**.
 
-This site is built with gojekyll and edited through Decap CMS running in local
-backend mode — no hosting, auth, or git remote required. Decap's local proxy
-(decap-server) is talked to by the admin UI only when the site is served on
-localhost; edits are written straight to the working-tree files, which you then
-commit with git.
+## Development
 
-**Requirements:**
+This site is built with [jigyll](https://github.com/reidransom/jigyll). To run,
+preview, or build it you only need `jigyll` on your PATH — from the repo root:
 
-- Node.js (for `npx decap-server`)
-- gojekyll on your PATH
+```sh
+jigyll serve   # live preview (prints the host/port, e.g. http://localhost:4000/)
+jigyll build   # static build in _site/
+```
+
+That's all that's required for development. Content editing via the CMS below is
+optional.
+
+## Content editing (optional, Decap CMS)
+
+If you prefer editing content in a UI, the site ships with [Decap CMS](https://decapcms.org/) running in
+local backend mode — no hosting, auth, or git remote required. Decap's local
+proxy (decap-server) is talked to by the admin UI only when the site is served
+on localhost; edits are written straight to the working-tree files, which you
+then commit with git.
+
+**Additional requirement:** Node.js (for `npx decap-server`).
 
 To edit content, run these in two terminals from the repo root:
 
@@ -28,16 +43,16 @@ To edit content, run these in two terminals from the repo root:
 2. The site:
 
    ```sh
-   gojekyll serve
+   jigyll serve
    ```
 
 Then open the `/admin/` path of the served site, e.g. http://localhost:4000/admin/
-(use whatever host/port `gojekyll serve` prints).
+(use whatever host/port `jigyll serve` prints).
 
 **Notes:**
 
 - Do NOT add `admin` to the `exclude:` list in `_config.yml` — that would also
-  remove `/admin/` from `gojekyll serve`, which is exactly when you need it.
+  remove `/admin/` from `jigyll serve`, which is exactly when you need it.
   `/admin/` is plain static files (no Node in production); decide whether to
   strip it from a production deploy at publish time.
 - The `/admin/` content model lives in `admin/config.yml`.

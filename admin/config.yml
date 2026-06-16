@@ -19,7 +19,7 @@ collections:
   - name: pages
     label: "Pages"
     # The default Decap preview can't run Jekyll/Liquid, so it just dumps fields
-    # unstyled. Disable it and use the live site (gojekyll on :4000) to preview.
+    # unstyled. Disable it and use the live site (jigyll on :4000) to preview.
     editor:
       preview: false
     files:
