@@ -15,8 +15,10 @@ lang: en_US
 url: "https://example.com"
 baseurl: ""
 
-# Default OpenGraph share image (ideally a 1200x630 asset).
-image: /assets/images/pic01.jpg
+# Default OpenGraph share image / template-gallery thumbnail.
+# 1280x800 (16:10) homepage screenshot — keep the key visual near the top,
+# since the gallery card crops wider images from the top to fit.
+image: /assets/og-image.png
 
 # Footer copyright line.
 copyright: "Untitled. All rights reserved."
